@@ -1,3 +1,7 @@
+# Simple Weather App
+
+A weather application that returns forecast data for current day, and a daily forecast.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
