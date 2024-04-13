@@ -1,141 +1,135 @@
-@use '../sass/variables' as *;
+@use "../sass/variables" as *;
 
- .location{
-    width: 100%;
-    height: 70px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
+.location {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.location div{
-    border: 1px solid $dark-grey;
+.location div {
+  border: 1px solid $dark-grey;
+  border-radius: 10px;
+  background-color: $dark-grey;
+}
+
+.location-name {
+  flex-basis: 20%;
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.location-search {
+  flex-basis: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  input {
+    width: 250px;
+    height: 30px;
+    font-size: 28px;
     border-radius: 10px;
-    background-color: $dark-grey;
-}
+    border: 1px solid $black;
+    background-color: $black;
+    color: $white;
+  }
 
-.location-name{
-    flex-basis: 20%;
-    font-size: 15px;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items:center;
-}
-
-.location-search{
-    flex-basis: 70%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-
-    input{
-        width: 250px;
-        height: 30px;
-        font-size: 28px;
-        border-radius: 10px;
-        border: 1px solid $black;
-        background-color: $black;
-        color: $white;
-    }
-
-    .clock{
-        border: 1px solid $black;
-        background-color: $black;
-        width: 170px;
-        height: 60px;
-        font-size: 25px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-}
-
-
-
-.info-container{
-    width: 100%;
-    height: 600px;
+  .clock {
+    border: 1px solid $black;
+    background-color: $black;
+    width: 170px;
+    height: 60px;
+    font-size: 25px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    
-    h1{
-        flex-basis: 70%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+    align-items: center;
+  }
 }
 
+.info-container {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 
-.weather-data{
-    border: 5px solid $dark-grey;
-    border-radius: 10px;
-    flex-basis: 80%;
+  h1 {
+    flex-basis: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.weather-data {
+  border: 5px solid $dark-grey;
+  border-radius: 10px;
+  flex-basis: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  div {
+    width: 100%;
+    height: 280px;
+  }
+
+  .spinner {
+    width: 100%;
+    height: 100px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-evenly;
-
-    div{
-        width: 100%;
-        height: 280px;
-    }
-
-    .spinner{
-        width: 100%;
-        height: 100px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 // Media Queries
 
-@media(max-width: 920px){
-    .info-container{
-        margin-top: 10px;
-        height: 900px;
-    }
+@media (max-width: 920px) {
+  .info-container {
+    margin-top: 10px;
+    height: 900px;
+  }
 }
 
+@media (max-width: 670px) {
+  .location {
+    height: 150px;
+    flex-direction: column;
+  }
 
-@media(max-width: 670px){
-    .location{
-        height: 150px;
-        flex-direction: column;
+  .weather-data {
+    div {
+      height: 500px;
     }
-
-    .weather-data{
-        div{
-            height: 500px;
-        }
-    }
+  }
 }
 
-@media(max-width: 684px){
-    .info-container{
-        height: 1700px;
-        margin-top: 60px;
-    }
+@media (max-width: 684px) {
+  .info-container {
+    height: 1700px;
+    margin-top: 60px;
+  }
 
-    .location{
-        width: 600px;
-        flex-direction: row;
-    }
-
+  .location {
+    width: 600px;
+    flex-direction: row;
+  }
 }
