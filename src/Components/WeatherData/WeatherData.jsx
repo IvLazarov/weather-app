@@ -56,7 +56,7 @@ const WeatherData=({currentWeather, lat, lon})=>{
         <h3>{week[dayInWeek-1]}</h3>
         <div className='temperature-icon'>
                 {
-                    time >= 20 || time <= 6 ?
+                    time >= 20 && time <= 6 ?
                     <img src={`weather_icons/night_icons/${currentWeather.weatherCode}.png`} 
                     alt="weather-icons" /> 
                     :
