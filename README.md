@@ -1,6 +1,7 @@
 # Simple Weather App
 
 A weather application that returns forecast data for current day, and a daily forecast.
+Check it out on: https://simple-forecast-app.netlify.app/.
 
 # React + Vite
 
