@@ -1,0 +1,14 @@
+
+.error{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    h1, h2{
+        width: fit-content;
+    }
+}
