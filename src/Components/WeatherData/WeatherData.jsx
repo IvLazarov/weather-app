@@ -5,6 +5,7 @@ import { FaDroplet } from "react-icons/fa6";
 import { TbUvIndex } from "react-icons/tb";
 import { FaWind } from "react-icons/fa";
 
+
 const WeatherData = ({ currentWeather, lat, lon }) => {
   const week = [
     "Monday",
@@ -28,6 +29,7 @@ const WeatherData = ({ currentWeather, lat, lon }) => {
         console.log(result);
       });
   }, []);
+
 
   const weatherCodes = {
     0: "Unknown",
@@ -61,7 +63,7 @@ const WeatherData = ({ currentWeather, lat, lon }) => {
       <div className="temperature">
         <h3>{week[dayInWeek - 1]}</h3>
         <div className="temperature-icon">
-          {time >= 20 && time <= 6 ? (
+          {time >= 20 || time <= 6 ? (
             <img
               src={`weather_icons/night_icons/${currentWeather.weatherCode}.png`}
               alt="weather-icons"
@@ -72,6 +74,7 @@ const WeatherData = ({ currentWeather, lat, lon }) => {
               alt="weather-icons"
             />
           )}
+
         </div>
         <div className="temperature-degrees">
           Temperature {Math.round(currentWeather.temperature)} °C
