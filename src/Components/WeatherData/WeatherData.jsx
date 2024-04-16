@@ -6,7 +6,7 @@ import { TbUvIndex } from "react-icons/tb";
 import { FaWind } from "react-icons/fa";
 
 
-const WeatherData = ({ currentWeather, lat, lon }) => {
+const WeatherData = ({ currentWeather, location }) => {
   const week = [
     "Monday",
     "Tuesday",
@@ -19,16 +19,13 @@ const WeatherData = ({ currentWeather, lat, lon }) => {
   const dayInWeek = new Date().getDay();
   const [time, setTime] = useState(0);
 
-  useEffect(() => {
-    fetch(
-      `http://api.geonames.org/timezoneJSON?lat=${lat}&lng=${lon}&username=kumekumovski2878991`
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        setTime(Number(result.time.slice(11, 13)));
-        console.log(result);
-      });
-  }, []);
+  useEffect(()=>{
+    fetch(`https://api.ipgeolocation.io/timezone?apiKey=7905a8efde1041bebeb1f7c9ff5b42e7&location=${location}`)
+    .then(response => response.json())
+    .then(data => {
+      setTime(Number(data.date_time.slice(11,13)))
+    })
+  },[])
 
 
   const weatherCodes = {
@@ -57,6 +54,7 @@ const WeatherData = ({ currentWeather, lat, lon }) => {
     7102: "Light Ice Pellets",
     8000: "Thunderstorm",
   };
+
 
   return (
     <div className="current-weather-data">

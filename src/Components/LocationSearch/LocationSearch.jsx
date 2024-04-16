@@ -12,8 +12,6 @@ const LocationSearch = () => {
   const [forecast, setForecast] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [lat, setLat] = useState(0);
-  const [lon, setLon] = useState(0);
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
@@ -44,8 +42,6 @@ const LocationSearch = () => {
       .then((response) => response.json())
       .then((response) => {
         setCurrentWeather(response.data.values);
-        setLat(response.location.lat);
-        setLon(response.location.lon);
         setLoading(false);
       })
       .catch((err) => {
@@ -104,8 +100,7 @@ const LocationSearch = () => {
             ) : (
               <WeatherData
                 currentWeather={currentWeather}
-                lat={lat}
-                lon={lon}
+                location={location}
               />
             )}
 
