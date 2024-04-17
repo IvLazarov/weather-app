@@ -5,7 +5,6 @@ import Forecast from "../Forecast/Forecast";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import { Oval } from "react-loader-spinner";
 
-
 const LocationSearch = () => {
   const [location, setLocation] = useState("");
   const [currentTime, setTime] = useState(new Date());
@@ -17,8 +16,6 @@ const LocationSearch = () => {
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
   }, []);
-
- 
 
   function handleInput(event) {
     setLocation(event.target.value);
@@ -88,49 +85,31 @@ const LocationSearch = () => {
       </div>
 
       <div className="info-container">
-        {Object.keys(currentWeather).length === 0 && forecast.length === 0 &&
-          <h1>Search City</h1> 
-        }
-        {
-          Object.keys(currentWeather).length > 0 && forecast.length > 0 &&
+        {Object.keys(currentWeather).length === 0 && forecast.length === 0 && (
+          <h1>Search City</h1>
+        )}
+        {Object.keys(currentWeather).length > 0 && forecast.length > 0 && (
           <div className="weather-data">
-          {loading ? (
-            <div className="spinner">
-              <Oval
-                height="80"
-                width="80"
-                visible={loading}
+            {loading ? (
+              <div className="spinner">
+                <Oval height="80" width="80" visible={loading} />
+              </div>
+            ) : (
+              <WeatherData
+                currentWeather={currentWeather}
+                location={location}
               />
-            </div>
-          ) : (
-            <WeatherData
-              currentWeather={currentWeather}
-              location={location}
-            />
-          )}
+            )}
 
-          {loading ? (
-            <div className="spinner">
-              <Oval
-                height="80"
-                width="80"
-                visible={loading}
-              />
-            </div>
-          ) : (
-            <Forecast forecast={forecast} />
-          )}
-        </div> 
-        }
-         
-          
-        
-          
-           
-
-          
-          
-        
+            {loading ? (
+              <div className="spinner">
+                <Oval height="80" width="80" visible={loading} />
+              </div>
+            ) : (
+              <Forecast forecast={forecast} />
+            )}
+          </div>
+        )}
       </div>
     </>
   );
