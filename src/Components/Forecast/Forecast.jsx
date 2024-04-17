@@ -49,6 +49,7 @@ const Forecast = ({ forecast }) => {
           <div key={key}>
             <h4>{forecastDays[key]}</h4>
             <img
+              loading="lazy"
               src={`weather_icons/${dailyForecast.values.weatherCodeMin}.png`}
               alt="weather-icon"
             />

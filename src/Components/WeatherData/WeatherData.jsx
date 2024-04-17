@@ -63,11 +63,13 @@ const WeatherData = ({ currentWeather, location }) => {
         <div className="temperature-icon">
           {time >= 20 || time <= 6 ? (
             <img
+              loading="lazy"
               src={`weather_icons/night_icons/${currentWeather.weatherCode}.png`}
               alt="weather-icons"
             />
           ) : (
             <img
+              loading="lazy"
               src={`weather_icons/${currentWeather.weatherCode}.png`}
               alt="weather-icons"
             />
