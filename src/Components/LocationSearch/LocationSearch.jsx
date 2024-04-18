@@ -85,10 +85,9 @@ const LocationSearch = () => {
       </div>
 
       <div className="info-container">
-        {Object.keys(currentWeather).length === 0 && forecast.length === 0 && (
+        {Object.keys(currentWeather).length === 0 && forecast.length === 0 ? 
           <h1>Search City</h1>
-        )}
-        {Object.keys(currentWeather).length > 0 && forecast.length > 0 && (
+          :
           <div className="weather-data">
             {loading ? (
               <div className="spinner">
@@ -109,7 +108,10 @@ const LocationSearch = () => {
               <Forecast forecast={forecast} />
             )}
           </div>
-        )}
+        }
+        
+          
+        
       </div>
     </>
   );
