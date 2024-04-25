@@ -91,7 +91,13 @@ const LocationSearch = () => {
           <div className="weather-data">
             {loading ? (
               <div className="spinner">
-                <Oval height="80" width="80" visible={loading} />
+                <Oval 
+                height="80" 
+                width="80" 
+                visible={loading} 
+                color="#222222"
+                secondaryColor="white"
+                />
               </div>
             ) : (
               <WeatherData
@@ -102,7 +108,13 @@ const LocationSearch = () => {
 
             {loading ? (
               <div className="spinner">
-                <Oval height="80" width="80" visible={loading} />
+                <Oval 
+                height="80" 
+                width="80" 
+                visible={loading} 
+                color="#222222"
+                secondaryColor="white"
+                />
               </div>
             ) : (
               <Forecast forecast={forecast} />
